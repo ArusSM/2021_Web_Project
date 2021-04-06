@@ -9,13 +9,18 @@
 
 .container {
     width: 1600px;
+    height: auto;
+    min-height: 100vh;
     margin: 0 auto;
+    background-color: darkgrey;
 }
 
 header {
+    height: 100px;
     display: flex;
     background-color: bisque;
     justify-content: space-between;
+    width: 1600px;
 }
 
 .headLeft {
@@ -37,12 +42,7 @@ header {
     margin-left: 50px;
     line-height: 50px;
     font-weight: bold;
-    box-shadow: 3px 3px;
-}
-
-.recommend:hover {
-    box-shadow: 3px 3px inset;
-
+    border: 1px solid black;
 }
 
 .login, .register {
@@ -55,6 +55,60 @@ header {
     margin-left: 50px;
     line-height: 50px;
     font-weight: bold;
-    box-shadow: 3px 3px;
+    border: 1px solid black;
+}
+
+footer {
+    position: absolute;
+    width: 1600px;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: yellowgreen;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 20px 0px 20px;
+    width: 1560px;
+    line-height: 50px;
+    height: 50px;
+    background-color: yellow;
+}
+
+.tabs > h2 {
+    margin-left: 20px;
+}
+
+.openBtn{
+    margin-right: 20px;
+    font-size: 40px;
+    margin-top: 5px;
+    padding-left: 1px;
+    line-height: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: violet;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.inv {
+    display: flex;
+    height: auto;
+    min-height: 700px;
+    margin: 0px 20px 20px 20px;
+    padding: 10px;
+    /* grid-auto-columns: 200px; */
+    background-color: tomato;
+}
+
+.card {
+    margin: 10px;
+    width: 200px;
+    height: 300px;
+    background-color: thistle;
 }
 
