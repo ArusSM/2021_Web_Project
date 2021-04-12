@@ -13,4 +13,6 @@ window.onload = function () {
         }
         console.log("올라가떠여")
     });
+
+    
 }
