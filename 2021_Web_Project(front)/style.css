@@ -16,6 +16,7 @@
 
 body {
     /* background-color: #F6EB61; */
+    background-color: #FFFFF3;
 }
 
 .container {
@@ -24,13 +25,14 @@ body {
     height: auto;
     min-height: 100vh;
     margin: 0 auto;
-    background-color: #c7d5e0;
+    background-color: #E0E3DA;
 }
 
 header {
     height: 100px;
     display: flex;
-    background-color: #171a21;
+    /* background-color: #171a21; */
+    background-color: #566270;
     justify-content: space-between;
     width: 1600px;
 }
@@ -77,7 +79,7 @@ footer {
     display: flex;
     justify-content: space-between;
     height: 100px;
-    background-color: azure;
+    background-color: #FFEEE4; /* 색 수정 필요 */
 }
 
 .tabs {
