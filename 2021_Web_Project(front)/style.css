@@ -16,7 +16,7 @@
 
 body {
     /* background-color: #F6EB61; */
-    background-color: #FFFFF3;
+    background-color: #FFF;
 }
 
 .container {
@@ -25,20 +25,20 @@ body {
     height: auto;
     min-height: 100vh;
     margin: 0 auto;
-    background-color: #E0E3DA;
+    background-color: #EBEBEB;
 }
 
 header {
     height: 100px;
     display: flex;
     /* background-color: #171a21; */
-    background-color: #566270;
+    background-color: #24272B;
     justify-content: space-between;
     width: 1600px;
 }
 
-.headLeft {
-    display: flex;
+.recommend {
+    margin-right: 50px;
 }
 
 /* .headRight {
@@ -50,7 +50,7 @@ header {
     width: 200px;
     height: 50px;
     border-radius: 10px;
-    background-color: beige;
+    background-color: #FFFFCC;
     text-align: center;
     margin-top: 25px;
     margin-left: 50px;
@@ -79,7 +79,14 @@ footer {
     display: flex;
     justify-content: space-between;
     height: 100px;
-    background-color: #FFEEE4; /* 색 수정 필요 */
+    background-color: #CCCCCC; /* 색 수정 필요 */
+}
+
+footer > div {
+    width: 100%;
+    text-align: center;
+    line-height: 100px;
+
 }
 
 .tabs {
