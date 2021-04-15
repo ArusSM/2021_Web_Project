@@ -20,11 +20,13 @@
 
 body {
     /* background-color: #F6EB61; */
+    transition: .4s;
     background-color: #FFF;
 }
 
 body.black {
     background-color: #000;
+    transition: .4s;
 }
 
 .container {
@@ -34,10 +36,12 @@ body.black {
     min-height: 100vh;
     margin: 0 auto;
     background-color: #EBEBEB;
+    transition: .4s;
 }
 
 .container.black {
     background-color: #2B2B2B;
+    transition: .4s;
 }
 
 header {
@@ -133,10 +137,12 @@ footer {
     justify-content: space-between;
     height: 100px;
     background-color: #CCCCCC; /* 색 수정 필요 */
+    transition: .4s;
 }
 
 footer.black {
     background-color: rgb(63, 63, 63);
+    transition: .4s;
 }
 
 footer.black > div {
@@ -160,10 +166,12 @@ footer > div {
     height: 50px;
     background-color: #fff;
     border: 1px solid #ddd;
+    transition: .4s;
 }
 
 .tabs.black {
     background-color: #666;
+    transition: .4s;
 }
 
 .tabs.black > h2 {
@@ -208,10 +216,12 @@ footer > div {
     background-color: #fff;
     margin-bottom: 20px;
     border: 1px solid #ddd;
+    transition: .4s;
 }
 
 .inv.black {
     background-color: #2B2B2B;
+    transition: .4s;
 }
 
 .card {
