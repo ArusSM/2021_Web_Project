@@ -25,6 +25,7 @@ public class HelloWorldController {
 	@GetMapping("/db")
 	public @ResponseBody List<TempVO> hello() {
 		List<TempVO> list = service.selectTemp();
+		System.out.println(list);
 		return list;
 	}
 }
