@@ -366,6 +366,10 @@ footer > div {
     color: #fff;
 }
 
+.right.black > div > a {
+	color: #fff;
+}
+
 .mainReview {
     border: 1px solid #ddd;
     width: 1160px;
@@ -386,8 +390,8 @@ footer > div {
     right: 20px;
 }
 
-.under.black > .youtube  {
-    color: white;
+.under.black > .youtube > a  {
+    color: #fff;
 }
 
 .youtube {

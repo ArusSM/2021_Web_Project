@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,6 +25,7 @@
                     <span class="slider"></span>
                   </label>
                 <div class="recommend">게임 추천하기</div>
+                
         </header>
         <section class="game_section white">
             <div class="game_container white">
@@ -34,11 +36,11 @@
                 <div class="s_t white">
                     <div class="inv white">
                         <div class="card white">
-                            <img src="/resources/images/pubg.jpg" alt="게임 이미지">
+                            <img src="${list.get(0).img}" alt="게임 이미지">
                             <div class="text-box">
-                                <div>게임제목</div>
-                                <div>추천 : 0</div>
-                                <div>비추천 : 0</div>
+                                <div>${list.get(0).title}</div>
+                                <div>추천 : ${list.get(0).recom}</div>
+                                <div>비추천 : ${list.get(0).norecom }</div>
                             </div>
                         </div>
                         <div class="card"></div>
@@ -87,7 +89,7 @@
         <div class="GamePopup white">
             <div class="popTop">
                 <div class="left">
-                    <img src="/resources/images/pubg.jpg" alt="">
+                    <img src="${list.get(0).img}" alt="">
                     <div class="revReco">
                         <div class="reco">
                             <i class="far fa-thumbs-up"></i>
@@ -100,21 +102,22 @@
                     </div>
                 </div>
                 <div class="right white">
-                    <div class="revName">게임 이름</div><!-- 게임 이름 -->
-                    <div class="revLink">게임 링크</div> <!-- 게임 링크 -->
-                    <div class="revRDate">출시일</div> <!-- Release date 출시일 -->
-                    <div class="revPNum">함께 플레이 가능한 플레이어 수</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
+                    <div class="revName">${list.get(0).title }</div><!-- 게임 이름 -->
+                    <div class="revLink"><a href="${list.get(0).gameLink }" target="_blank">게임 링크</a></div> <!-- 게임 링크 -->
+                    <div class="revRDate">${list.get(0).releaseDate }</div> <!-- Release date 출시일 -->
+                    <div class="revPNum">${list.get(0).multiple}</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
                 </div>
             </div>
             <div class="mainReview"> <!-- 메인 리뷰 부분 -->
 
             </div>
             <div class="under white">
-                <div class="youtube white">유튜브 링크</div>
+                <div class="youtube white"><a href="${list.get(0).youtube}" target="_blank">유튜브 링크</a></div>
                 <button class="closePop">닫기</button>
             </div>
         </div>
     </div>
+    <a href="/db">db</a>
 </body>
 
 </html>
