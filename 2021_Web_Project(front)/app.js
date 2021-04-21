@@ -19,8 +19,8 @@ window.onload = function () {
             e.currentTarget.dataset.open = false;
             $(this).html(`<i class="fas fa-plus"></i>`);
         }
-        console.log("올라가떠여")
     });
+
 
     $("#isBlack").on("input", function(){
         console.log("fdsa");
@@ -35,6 +35,7 @@ window.onload = function () {
 
     $(".closePop").click(function(){
         $(".GamePopup").hide("slow");
+        $(".GamePopup").empty();
         $(".darkcurtain").hide();
     });
 
@@ -46,6 +47,38 @@ window.onload = function () {
     $(".closeRec").click(function(){
         $(".recGame").hide("slow");
         $(".darkcurtain").hide();
+    });
+
+    $(".card").click(function() {
+        var GamePop = ` <div class="popTop">
+                <div class="left">
+                    <img src="${list.get(0).img}" alt="">
+                    <div class="revReco">
+                        <div class="reco">
+                            <i class="far fa-thumbs-up"></i>
+                            : 0
+                        </div>
+                        <div class="noReco">
+                            <i class="far fa-thumbs-down"></i>
+                            : 0
+                        </div>
+                    </div>
+                </div>
+                <div class="right white">
+                    <div class="revName">${list.get(0).title }</div><!-- 게임 이름 -->
+                    <div class="revLink"><a href="${list.get(0).gameLink }" target="_blank">게임 링크</a></div> <!-- 게임 링크 -->
+                    <div class="revRDate">${list.get(0).releaseDate }</div> <!-- Release date 출시일 -->
+                    <div class="revPNum">${list.get(0).multiple}</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
+                </div>
+            </div>
+            <div class="mainReview"> <!-- 메인 리뷰 부분 -->
+
+            </div>
+            <div class="under white">
+                <div class="youtube white"><a href="${list.get(0).youtube}" target="_blank">유튜브 링크</a></div>
+                <button class="closePop">닫기</button> `
+
+                $('.GamePopup').append();
     });
         
     
@@ -61,6 +94,11 @@ function darkMode() {
         $(".white").removeClass("white").addClass("black");
         toBlack = true;
     }
+}
+
+function getId() {
+    let idx =  e.currentTarget.dataset.idx;
+
 }
 
 // function convert( type , white , black , time = 400 ){

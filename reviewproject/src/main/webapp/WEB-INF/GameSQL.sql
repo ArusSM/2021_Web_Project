@@ -20,7 +20,9 @@ create table game_info(
 	youtube varchar2(500)
 );
 
-insert into GAME_INFO values(1, '배틀그라운드', '/resources/images/pubg.jpg', 'https://naver.com', '2021-04-20', '대규모 멀티플레이어', 0, 0,'총으로 키보드를 만드는 게임.', 'https://youtu.be')
+insert into GAME_INFO values(1, '배틀그라운드', '/resources/images/pubg.jpg', 'https://naver.com', '2021-04-20', '대규모 멀티플레이어', 0, 0,'총으로 키보드를 만드는 게임.', 'https://youtu.be');
+insert into GAME_INFO values(2, '배틀그라운드', '/resources/images/pubg.jpg', 'https://naver.com', '2021-04-20', '대규모 멀티플레이어', 0, 0,'총으로 키보드를 만드는 게임.', 'https://youtu.be');
+insert into GAME_INFO values(3, '배틀그라운드', '/resources/images/pubg.jpg', 'https://naver.com', '2021-04-20', '대규모 멀티플레이어', 0, 0,'총으로 키보드를 만드는 게임.', 'https://youtu.be');
 
 select * from TEMP;
 

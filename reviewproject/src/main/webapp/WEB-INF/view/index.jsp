@@ -35,14 +35,16 @@
                 </div>
                 <div class="s_t white">
                     <div class="inv white">
-                        <div class="card white">
-                            <img src="${list.get(0).img}" alt="게임 이미지">
+                    <c:forEach var="i" begin="0" end="${list.size()-1}" step="1" >
+                        <div class="card white" data-idx="${list.get(i).id }">
+                            <img src="${list.get(i).img}" alt="게임 이미지">
                             <div class="text-box">
-                                <div>${list.get(0).title}</div>
-                                <div>추천 : ${list.get(0).recom}</div>
-                                <div>비추천 : ${list.get(0).norecom }</div>
+                                <div>${list.get(i).title}</div>
+                                <div>추천 : ${list.get(i).recom}</div>
+                                <div>비추천 : ${list.get(i).norecom }</div>
                             </div>
                         </div>
+                        </c:forEach>
                         <div class="card"></div>
                         <div class="card"></div>
                     </div>
@@ -50,7 +52,7 @@
             </div>
             <div class="game_container white">
                 <div class="tabs white">
-                    <h2>장르</h2>
+                    <h2 id="1">장르</h2>
                     <div class="openBtn white" data-idx="1" data-open="false"><i class="fas fa-plus"></i></div>
                 </div>
                 <div class="s_t white">
@@ -87,34 +89,45 @@
         </div>
         <div class="darkcurtain"></div>
         <div class="GamePopup white">
-            <div class="popTop">
-                <div class="left">
-                    <img src="${list.get(0).img}" alt="">
-                    <div class="revReco">
-                        <div class="reco">
-                            <i class="far fa-thumbs-up"></i>
-                            : 0
-                        </div>
-                        <div class="noReco">
-                            <i class="far fa-thumbs-down"></i>
-                            : 0
-                        </div>
-                    </div>
-                </div>
-                <div class="right white">
-                    <div class="revName">${list.get(0).title }</div><!-- 게임 이름 -->
-                    <div class="revLink"><a href="${list.get(0).gameLink }" target="_blank">게임 링크</a></div> <!-- 게임 링크 -->
-                    <div class="revRDate">${list.get(0).releaseDate }</div> <!-- Release date 출시일 -->
-                    <div class="revPNum">${list.get(0).multiple}</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
-                </div>
-            </div>
-            <div class="mainReview"> <!-- 메인 리뷰 부분 -->
+                <script type="text/javascript">
+                $(".card").click(function (e) {
+                	$(".gpp").hide();
+					let idx = e.currentTarget.dataset.idx;
+					let pop = document.createElement("div");
+					pop.classList.add("gpp");
+					pop.innerHTML =  ` <div class="popTop">
+		                <div class="left">
+		                    <img src="${list.get(idx).img}" alt="">
+		                    <div class="revReco">
+		                        <div class="reco">
+		                            <i class="far fa-thumbs-up"></i>
+		                            : 0
+		                        </div>
+		                        <div class="noReco">
+		                            <i class="far fa-thumbs-down"></i>
+		                            : 0
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="right white">
+		                    <div class="revName">${list.get(idx).title }</div><!-- 게임 이름 -->
+		                    <div class="revLink"><a href="${list.get(idx).gameLink }" target="_blank">게임 링크</a></div> <!-- 게임 링크 -->
+		                    <div class="revRDate">${list.get(idx).releaseDate }</div> <!-- Release date 출시일 -->
+		                    <div class="revPNum">${list.get(idx).multiple}</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
+		                </div>
+		            </div>
+		            <div class="mainReview"> <!-- 메인 리뷰 부분 -->
 
-            </div>
-            <div class="under white">
-                <div class="youtube white"><a href="${list.get(0).youtube}" target="_blank">유튜브 링크</a></div>
-                <button class="closePop">닫기</button>
-            </div>
+		            </div>
+		            <div class="under white">
+		                <div class="youtube white"><a href="${list.get(idx).youtube}" target="_blank">유튜브 링크</a></div>
+		                `
+
+		                $('.GamePopup').append(pop);
+		    });
+                
+                </script>
+                <button class="closePop">닫기</button> 
         </div>
     </div>
     <a href="/db">db</a>

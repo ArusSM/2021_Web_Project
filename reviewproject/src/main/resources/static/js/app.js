@@ -47,9 +47,8 @@ window.onload = function () {
         $(".recGame").hide("slow");
         $(".darkcurtain").hide();
     });
-        
     
-    
+   
 }
 
 function darkMode() {
