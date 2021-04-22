@@ -6,54 +6,57 @@ window.onload = function () {
     $(".recGame").hide();
     $(".darkcurtain").hide();
     let status = false;
-    $(".openBtn").on("click", function (e) {
-        
-        let idx =  e.currentTarget.dataset.idx;
+    $(".tabs").on("click", function (e) {
+
+        let idx = e.currentTarget.dataset.idx;
         let open = e.currentTarget.dataset.open;
+
         if (open == "false") {
             $(".s_t").eq(idx).stop().slideDown();
             e.currentTarget.dataset.open = true;
-            $(this).html(`<i class="fas fa-minus"></i>`);
-        }else {
+            $(".openBtn").eq(idx).html(`<i class="fas fa-minus"></i>`);
+        } else {
             $(".s_t").eq(idx).stop().slideUp();
             e.currentTarget.dataset.open = false;
-            $(this).html(`<i class="fas fa-plus"></i>`);
+            $(".openBtn").eq(idx).html(`<i class="fas fa-plus"></i>`);
         }
         console.log("올라가떠여")
     });
 
-    $("#isBlack").on("input", function(){
+    $("#isBlack").on("input", function () {
         console.log("fdsa");
         darkMode();
     });
-    
 
-    $(".card").on("click", function(e) {
+
+    $(".card").on("click", function (e) {
         $(".GamePopup").show("slow");
         $(".darkcurtain").show();
-    }) 
+    })
 
-    $(".closePop").click(function(){
+    $(".closePop").click(function () {
         $(".GamePopup").hide("slow");
         $(".darkcurtain").hide();
     });
 
-    $(".recommend").click(function(){
+    $(".recommend").click(function () {
         $(".recGame").show("slow");
         $(".darkcurtain").show();
     })
 
-    $(".closeRec").click(function(){
+    $(".closeRec").click(function () {
         $(".recGame").hide("slow");
         $(".darkcurtain").hide();
     });
+
     
-   
+
+
 }
 
 function darkMode() {
 
-    if(toBlack){
+    if (toBlack) {
         $(".black").removeClass("black").addClass("white");
         toBlack = false;
     } else {
@@ -77,9 +80,9 @@ function darkMode() {
 
 //     let now = origin;
 //     let speed = (target - origin) * cycle / time;
-    
+
 //     const frame = setInterval(() => {
-        
+
 //         $(".convert_eff").css({ backgroundColor : `rgb( ${now} , ${now} , ${now} )` });
 //         now += speed;
 //         if(now == target) clearInterval(frame);

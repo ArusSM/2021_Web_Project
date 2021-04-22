@@ -167,6 +167,7 @@ footer > div {
     background-color: #fff;
     border: 1px solid #ddd;
     transition: .4s;
+    cursor: pointer;
 }
 
 .tabs.black {
@@ -193,7 +194,6 @@ footer > div {
     height: 20px;
     background-color: transparent;
     text-align: center;
-    cursor: pointer;
 }
 
 .openBtn.black > i {
@@ -331,11 +331,11 @@ footer > div {
 
 .reco {
     width: 50%;
-    color: rgb(100, 255, 100);
+    color: #01AA2B;
 }
 
 .reco > i {
-    color : rgb(100, 255, 100);
+    color : #01AA2B;
 }
 
 .noReco {
@@ -375,6 +375,7 @@ footer > div {
     width: 1160px;
     height: 320px;
     margin: 0px 20px;
+    padding: 10px;
 }
 
 .mainReview.black {

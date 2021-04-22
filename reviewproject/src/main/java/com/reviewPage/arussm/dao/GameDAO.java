@@ -10,4 +10,6 @@ import com.reviewPage.arussm.vo.GameVO;
 public interface GameDAO {
 	
 	public List<GameVO> selectGame();
+	
+	public int updateReco(int id);
 }

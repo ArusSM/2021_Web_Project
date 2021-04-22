@@ -17,5 +17,10 @@ public class GameService {
 	public List<GameVO> selectGame() {
 		return dao.selectGame();
 	}
+	
+	public int updateReco(int id) {
+		
+		return dao.updateReco(id);
+	}
 
 }
