@@ -44,5 +44,11 @@ public class HelloWorldController {
 		int result = service.updateReco(idx);
 		return result;
 	}
+	
+	@PostMapping("/norecom")
+	public @ResponseBody int norecom(@RequestParam int idx) {
+		int result = service.updateNoreco(idx);
+		return result;
+	}
 
 }

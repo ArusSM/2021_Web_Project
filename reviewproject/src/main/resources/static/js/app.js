@@ -1,4 +1,4 @@
-let toBlack = false;
+
 
 window.onload = function () {
     $(".s_t").hide();
@@ -23,11 +23,7 @@ window.onload = function () {
         console.log("올라가떠여")
     });
 
-    $("#isBlack").on("input", function () {
-        console.log("fdsa");
-        darkMode();
-    });
-
+ 
 
     $(".card").on("click", function (e) {
         $(".GamePopup").show("slow");
@@ -54,16 +50,7 @@ window.onload = function () {
 
 }
 
-function darkMode() {
 
-    if (toBlack) {
-        $(".black").removeClass("black").addClass("white");
-        toBlack = false;
-    } else {
-        $(".white").removeClass("white").addClass("black");
-        toBlack = true;
-    }
-}
 
 // function convert( type , white , black , time = 400 ){
 

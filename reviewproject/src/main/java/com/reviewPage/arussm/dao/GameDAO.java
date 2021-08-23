@@ -12,4 +12,6 @@ public interface GameDAO {
 	public List<GameVO> selectGame();
 	
 	public int updateReco(int id);
+	
+	public int updateNoreco(int id);
 }

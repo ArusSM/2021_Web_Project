@@ -7,13 +7,17 @@
 	<update id="updateReco">
 		update game_info set recom = recom + 1 where id = #{id}
 	</update>
+	<update id="updateNoreco">
+		update game_info set norecom =  norecom + 1 where id = #{id}
+	</update>
 	<insert id="setUserIp">
 		insert into user_reco values(#{id} , #{ip} , #{type})
 	</insert>
+	
 	<select id="getUserIp">
 		select * from user_reco where id = #{id} AND ip = #{ip} AND type = #{type}
 	</select>
-	<update id="updateNoreco"></update>
+	
 </mapper>
 
 

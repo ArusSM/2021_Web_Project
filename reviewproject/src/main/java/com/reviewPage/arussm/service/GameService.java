@@ -22,5 +22,9 @@ public class GameService {
 		
 		return dao.updateReco(id);
 	}
+	
+	public int updateNoreco(int id) {
+		return dao.updateNoreco(id);
+	}
 
 }
