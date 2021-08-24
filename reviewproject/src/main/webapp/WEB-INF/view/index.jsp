@@ -140,8 +140,7 @@
                     <div class="mainReview white"> <!-- 메인 리뷰 부분 -->
                             ${list.get(idx).content}
                     </div>
-                    <div class="under white">
-                        <div class="youtube white"><a href="${list.get(idx).youtube}" target="_blank">유튜브 링크</a></div>
+                    
                         `;
                 } else {
                 	pop.innerHTML = ` <div class="popTop">
@@ -168,8 +167,7 @@
                     <div class="mainReview black"> <!-- 메인 리뷰 부분 -->
                             ${list.get(idx).content}
                     </div>
-                    <div class="under black">
-                        <div class="youtube black"><a href="${list.get(idx).youtube}" target="_blank">유튜브 링크</a></div>
+                    
                         `;
                 }
             /* 컷 */
