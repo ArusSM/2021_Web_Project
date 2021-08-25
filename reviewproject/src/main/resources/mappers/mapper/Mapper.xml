@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.reviewPage.arussm.dao.GameDAO">
 	<select id="selectGame" resultType="GameVO">
 		select * from game_info
+	</select>
+	
+	<select id="selectFpsGame" resultType="GameVO">
+		select * from game_info where category = 'fps'
+	</select>
+	
+	<select id="selectRpgGame" resultType="GameVO">
+		select * from game_info where category = 'rpg'
 	</select>
 	<update id="updateReco">
 		update game_info set recom = recom + 1 where id = #{id}

@@ -15,12 +15,12 @@
             <script src="/resources/js/jquery-3.3.1.js"></script>
             <script src="/resources/js/app.js"></script>
         </head>
+
         <body class="white">
             <div class="container white">
                 <header>
-                    <img src="/resources/images/Logo.png" alt="">
-                    <label class="switch">
-                        <input type="checkbox" id="isBlack">
+                    <img src="/resources/images/Logo.png" alt=""> <label class="switch"> <input type="checkbox"
+                            id="isBlack">
                         <span class="slider"></span>
                     </label>
                     <div class="recommend">게임 추천하기</div>
@@ -30,15 +30,18 @@
                     <div class="game_container white">
                         <div class="tabs white" data-idx="0" data-open="false">
                             <h2>장르</h2>
-                            <div class="openBtn white"><i class="fas fa-plus"></i></div>
+                            <div class="openBtn white">
+                                <i class="fas fa-plus"></i>
+                            </div>
                         </div>
                         <div class="s_t white">
                             <div class="inv white">
-                                <c:forEach var="i" begin="0" end="${list.size()-1}" step="1">
+                                <c:forEach var="i" begin="0" end="${fpsList.size()-1}" step="1">
                                     <!-- 포이치로 반복함. -->
-                                    <div class="card white" data-idx="${list.get(i).id }">
-                                        <img src="${list.get(i).img}" alt="게임 이미지">
-                                        
+                                    <div class="card white" data-idx="${fpsList.get(i).id}"
+                                        data-category="${fpsList.get(i).category}">
+                                        <img src="${fpsList.get(i).img}" alt="게임 이미지">
+
                                     </div>
 
                                 </c:forEach>
@@ -48,24 +51,26 @@
                     <div class="game_container white">
                         <div class="tabs white" data-idx="1" data-open="false">
                             <h2 id="1">장르</h2>
-                            <div class="openBtn white"><i class="fas fa-plus"></i></div>
+                            <div class="openBtn white">
+                                <i class="fas fa-plus"></i>
+                            </div>
                         </div>
                         <div class="s_t white">
                             <div class="inv white">
-                                <div class="card white">
-                                    <img src="/resources/images/pubg.jpg" alt="게임 이미지">
-                                    <div class="text-box">
-                                        <div>게임제목</div>
-                                        <div>추천 : 0</div>
-                                        <div>비추천 : 0</div>
+                                <c:forEach var="i" begin="0" end="${rpgList.size()-1}" step="1">
+                                    <!-- 포이치로 반복함. -->
+                                    <div class="card white" data-idx="${rpgList.get(i).id}"
+                                        data-category="${rpgList.get(i).category}">
+                                        <img src="${rpgList.get(i).img}" alt="게임 이미지">
                                     </div>
-                                </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
                 </section>
                 <footer class="white">
-                    <div>Copyright 2021. Ayrus All pictures cannot be copied without permission.</div>
+                    <div>Copyright 2021. Ayrus All pictures cannot be copied
+                        without permission.</div>
                 </footer>
                 <div class="recGame white">
                     <!-- 게임 추천하기 팝업 -->
@@ -92,87 +97,105 @@
 
 
         <script type="text/javascript">
-        let toBlack = false;
+            let list = [];
 
-        $("#isBlack").on("input", function () {
-            console.log("fdsa");
-            darkMode();
-        });
+            <c:forEach items="${list}" var="rpgItem">
+                list.push(
+                {id: `${rpgItem.id}`,
+                img: `${rpgItem.img}`,
+                title: `${rpgItem.title}`,
+                gameLink: `${rpgItem.gameLink}`,
+                releaseDate: `${rpgItem.releaseDate}`,
+                multiple: `${rpgItem.multiple}`,
+                recom: `${rpgItem.recom}`,
+                norecom: `${rpgItem.norecom}`,
+                content: `${rpgItem.content}`,
+                category: `${rpgItem.category}`} );
+            </c:forEach>
+            let toBlack = false;
 
-        function darkMode() {
+            $("#isBlack").on("input", function () {
+                console.log("fdsa");
+                darkMode();
+            });
 
-            if (toBlack) {
-                $(".black").removeClass("black").addClass("white");
-                toBlack = false;
-            } else {
-                $(".white").removeClass("white").addClass("black");
-                toBlack = true;
+            function darkMode() {
+
+                if (toBlack) {
+                    $(".black").removeClass("black").addClass("white");
+                    toBlack = false;
+                } else {
+                    $(".white").removeClass("white").addClass("black");
+                    toBlack = true;
+                }
             }
-        }
-        
+
             $(".card").click(function (e) {
                 $(".gpp").hide();
                 let idx = e.currentTarget.dataset.idx;
+                let category = e.currentTarget.dataset.category;
+                let selectedItem = list.find(item => item.id == idx);
+                console.log(selectedItem);
                 let pop = document.createElement("div");
                 pop.classList.add("gpp");
-                if(!toBlack) {
-                	pop.innerHTML = ` <div class="popTop">
+                // if(category=="fps"){}
+                if (!toBlack) {
+                    pop.innerHTML = ` <div class="popTop">
                         <div class="left white">
-                            <img src="${list.get(idx).img}" alt="">
+                            <img src="`+ selectedItem.img + `" alt="">
                             <div class="revReco">
-                                <div data-idx="${list.get(i).id}" class="reco">
+                                <div data-idx="`+ selectedItem.id + `" class="reco">
                                     <i class="far fa-thumbs-up"></i>
-                                    : <span>${list.get(idx).recom}</span>
+                                    : <span>`+ selectedItem.recom + `</span>
                                 </div>
-                                <div data-idx="${list.get(i).id}" class="noReco">
+                                <div data-idx="`+ selectedItem.id + `" class="noReco">
                                     <i class="far fa-thumbs-down"></i>
-                                    : <span>${list.get(idx).norecom}</span>
+                                    : <span>`+ selectedItem.norecom + `</span>
                                 </div>
                             </div>
                         </div>
                         <div class="right white">
-                            <div class="revName">${list.get(idx).title}</div><!-- 게임 이름 -->
-                            <div class="revLink"><a href="${list.get(idx).gameLink}" target="_blank">게임 링크</a></div> <!-- 게임 링크 -->
-                            <div class="revRDate">${list.get(idx).releaseDate}</div> <!-- Release date 출시일 -->
-                            <div class="revPNum">${list.get(idx).multiple}</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
+                            <div class="revName">`+ selectedItem.title + `</div><!-- 게임 이름 -->
+                            <div class="revLink"><a href="`+ selectedItem.gameLink + `" target="_blank">게임 링크</a></div> <!-- 게임 링크 -->
+                            <div class="revRDate">`+ selectedItem.releaseDate + `</div> <!-- Release date 출시일 -->
+                            <div class="revPNum">`+ selectedItem.multiple + `</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
                         </div>
                     </div>
                     <div class="mainReview white"> <!-- 메인 리뷰 부분 -->
-                            ${list.get(idx).content}
+                            `+ selectedItem.content + `
                     </div>
                     
                         `;
                 } else {
-                	pop.innerHTML = ` <div class="popTop">
+                    pop.innerHTML = ` <div class="popTop">
                         <div class="left black">
-                            <img src="${list.get(idx).img}" alt="">
+                            <img src="`+ selectedItem.img + `" alt="">
                             <div class="revReco">
-                                <div data-idx="${list.get(i).id}" class="reco">
+                                <div data-idx="`+ selectedItem.id + `" class="reco">
                                     <i class="far fa-thumbs-up"></i>
-                                    : <span>${list.get(idx).recom}</span>
+                                    : <span>`+ selectedItem.recom + `</span>
                                 </div>
-                                <div data-idx="${list.get(i).id}" class="noReco">
+                                <div data-idx="`+ selectedItem.id + `" class="noReco">
                                     <i class="far fa-thumbs-down"></i>
-                                    : <span>${list.get(idx).norecom}</span>
+                                    : <span>`+ selectedItem.norecom + `</span>
                                 </div>
                             </div>
                         </div>
                         <div class="right black">
-                            <div class="revName">${list.get(idx).title}</div><!-- 게임 이름 -->
-                            <div class="revLink"><a href="${list.get(idx).gameLink}" target="_blank">게임 링크</a></div> <!-- 게임 링크 -->
-                            <div class="revRDate">${list.get(idx).releaseDate}</div> <!-- Release date 출시일 -->
-                            <div class="revPNum">${list.get(idx).multiple}</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
+                            <div class="revName">`+ selectedItem.title + `</div><!-- 게임 이름 -->
+                            <div class="revLink"><a href="`+ selectedItem.gameLink + `" target="_blank">게임 링크</a></div> <!-- 게임 링크 -->
+                            <div class="revRDate">`+ selectedItem.releaseDate + `</div> <!-- Release date 출시일 -->
+                            <div class="revPNum">`+ selectedItem.multiple + `</div> <!-- Player Number 싱글 / 멀티 / 대규모 멀티 여부 -->
                         </div>
                     </div>
                     <div class="mainReview black"> <!-- 메인 리뷰 부분 -->
-                            ${list.get(idx).content}
+                            `+ selectedItem.content + `
                     </div>
                     
                         `;
                 }
-            /* 컷 */
+                /* 컷 */
                 $('.GamePopup').append(pop);
-
                 $('.reco').click(function () {
                     let idx = $(this).data('idx');
                     console.log(idx);
@@ -190,7 +213,7 @@
                         }
                     });
                 });
-                
+
                 $('.noReco').click(function () {
                     let idx = $(this).data('idx');
                     console.log(idx);

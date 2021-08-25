@@ -28,7 +28,7 @@ public class GameVO {
 	@JsonProperty
 	private String content;
 	@JsonProperty
-	private String youtube;
+	private String category;
 	
 	public int getId() {
 		return id;
@@ -84,11 +84,11 @@ public class GameVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getYoutube() {
-		return youtube;
+	public String getCategory() {
+		return category;
 	}
-	public void setYoutube(String youtube) {
-		this.youtube = youtube;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 }

@@ -26,9 +26,12 @@ public class HelloWorldController {
 
 	@GetMapping("/")
 	public String hello(Model model) {
+		List<GameVO> fpsList = service.selectFpsGame();
+		List<GameVO> rpgList = service.selectRpgGame();
 		List<GameVO> list = service.selectGame();
 		model.addAttribute("list", list);
-		System.out.println(list.get(0));
+		model.addAttribute("fpsList", fpsList);
+		model.addAttribute("rpgList", rpgList);
 		return "index.jsp";
 	}
 

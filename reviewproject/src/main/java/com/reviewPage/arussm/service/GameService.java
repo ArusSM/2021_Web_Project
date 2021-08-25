@@ -18,6 +18,14 @@ public class GameService {
 		return dao.selectGame();
 	}
 	
+	public List<GameVO> selectFpsGame() {
+		return dao.selectFpsGame();
+	}
+	
+	public List<GameVO> selectRpgGame() {
+		return dao.selectRpgGame();
+	}
+	
 	public int updateReco(int id) {
 		
 		return dao.updateReco(id);
