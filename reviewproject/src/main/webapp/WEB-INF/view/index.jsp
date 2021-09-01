@@ -19,8 +19,8 @@
         <body class="white">
             <div class="container white">
                 <header>
-                    <img src="/resources/images/Logo.png" alt=""> <label class="switch"> <input type="checkbox"
-                            id="isBlack">
+                    <img src="/resources/images/Logo.png" alt=""> 
+                    <label class="switch"> <input type="checkbox" id="isBlack">
                         <span class="slider"></span>
                     </label>
                     <div class="recommend">게임 추천하기</div>
@@ -29,7 +29,7 @@
                 <section class="game_section white">
                     <div class="game_container white">
                         <div class="tabs white" data-idx="0" data-open="false">
-                            <h2>장르</h2>
+                            <h2>FPS(First Person Shooter)</h2>
                             <div class="openBtn white">
                                 <i class="fas fa-plus"></i>
                             </div>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="game_container white">
                         <div class="tabs white" data-idx="1" data-open="false">
-                            <h2 id="1">장르</h2>
+                            <h2 id="1">RPG(Role-Playing Game)</h2>
                             <div class="openBtn white">
                                 <i class="fas fa-plus"></i>
                             </div>
